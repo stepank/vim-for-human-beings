@@ -71,29 +71,14 @@ set smartcase
 set hlsearch
 set incsearch
 
+" selection with shift + arrows
+behave mswin
+
 " command mode
 imap <C-P> <C-O>:
 
 " terminal mode
 imap <C-T> <C-O>:!
-
-" selection with shift + arrows
-
-imap <S-Up> <C-O>v<Up>
-imap <S-Down> <C-O>v<Down>
-vmap <S-Up> <Up>
-vmap <S-Down> <Down>
-
-imap <S-Left> <C-O>v
-imap <S-Right> <C-O>v
-vmap <S-Left> <Left>
-vmap <S-Right> <Right>
-
-" the following keys don't work in gnome-terminal
-imap <S-Home> <C-O>v<Home>
-imap <S-End> <C-O>v<End>
-vmap <S-Home> <Home>
-vmap <S-End> <End>
 
 " switch tabs
 imap <A-Left> <C-O>:tabprev<CR>
@@ -103,6 +88,9 @@ imap <A-Right> <C-O>:tabnext<CR>
 vmap <C-C> y
 vmap <C-X> d
 imap <C-V> <C-O>:call PasteForHumans()<CR>
+
+" delete (not cut) with <Del>
+vmap <Del> "_d
 
 " open a new tab
 imap <C-N> <C-O>:tabedit 
@@ -143,7 +131,7 @@ function! PasteForHumans()
     if g:CursorWasAtEndOfLineI == 1
         normal! "+p
     else
-        normal! "+P
+        normal! "+Pl
     endif
 endfunction
 

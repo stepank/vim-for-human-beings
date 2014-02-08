@@ -12,13 +12,13 @@ It turned out that such an editor just did not exist (I can't stand vim as it is
 ## What it can
 
 Of course, there is some usual stuff that I expect from a decent editor:
-* highlights syntax,
-* shows line numbers,
-* shows matching brackets,
-* does autoindentation,
-* does not create backups (don't need them),
-* makes tab symbol visible,
-* supports incremental search,
+* syntax highlighting,
+* line numbers,
+* matching bracket highlightting,
+* autoindentation,
+* no backups (don't need them),
+* visible tab symbol,
+* incremental search,
 * does other less important things.
 
 However, the major difference from vim is how you work with the editor:
@@ -62,13 +62,9 @@ Other edit functions:
 
 ## Limitations (or bugs)
 
-Alhough selection with _Shift + Arrows_ generally works, it behaves slightly different from what most people might expect:
-* After you start selecting text, a symbol under the cursor is considered selected. Therefore, don't be surprised when you press, say, _Shift + Right_ and the cursor does not move, it actually has just selected one symbol. Even though this behaviour differs visually from ordinary text editors, mechanically it is quite similar.
-* The consequence of the point above is that when you are at the beginning of a line and press _Shift + Down_, it selects not only the current line, but the first symbol of the next line as well. Unfortunately, I don't know an easy way to fix this. What I do in such cases is press _Shift + Left_ to unselect the unwanted symbol.
-* After you start selecting text, releasing _Shift_ and navigating with arrows moves the selection. It's not a bug, it's a feature. The problem is that in Linux I use Gnome commander, which I like except for the fact that it messes _Shift + Home / End_. For now, the only way to select to the beginning / the end of the line is to hit _Shift + Left / Right_ and then just _Home / End_.
+First, _Ctrl + Home_, _Ctrl + End_, _Shift + Home_, and _Shift + End_ do not work in Gnome Terminal (which I use) out of the box. It seems to be impossible to fix this from vim side. It's Gnome Terminal (not GT itself, but VTE which GT is based on) that requires fixing. More about this in [my blog post](http://stepankk-dev.blogspot.ru/2014/02/fixing-ctrl-home-ctrl-end-shift-home.html).
 
-Other things:
-* If you select some text, copy it to clipboard, select another piece of text and then try to paste the first piece, it won't overwrite the selected one, it just won't do anything. Again, I have no idea how to fix this. The workaround is to first hit _Del_, then paste.
+Another thing is if you select some text, copy it to clipboard, select another piece of text and then try to paste the first piece, it won't overwrite the selected one, it just won't do anything. I have no idea how to fix this. The workaround is to first hit _Del_, then paste.
 
 ## Contacting me
 
