@@ -48,7 +48,7 @@ Find & replace:
 * _Ctrl + F_ - increamental search. Hit _<Enter>_ to preserve highlighting.
 * _Ctrl + H_ - hide the highlighting.
 * _F3_ - search forward.
-* _Shift + F#_ - search backward.
+* _Shift + F_ - search backward.
 * _Ctrl + R_ - replace ALL occurences. First, enter the text you want to replace, then _/_, then the replacement string and hit _Enter_.
 
 Other edit functions:
