@@ -72,6 +72,7 @@ set hlsearch
 set incsearch
 
 " selection with shift + arrows
+source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " command mode
@@ -84,11 +85,6 @@ imap <C-T> <C-O>:!
 imap <A-Left> <C-O>:tabprev<CR>
 imap <A-Right> <C-O>:tabnext<CR>
 
-" copy / cut / paste
-vmap <C-C> y
-vmap <C-X> d
-imap <C-V> <C-O>:call PasteForHumans()<CR>
-
 " delete (not cut) with <Del>
 vmap <Del> "_d
 
@@ -100,10 +96,6 @@ imap <C-W> <C-O>:quit<CR>
 
 " save the current tab
 imap <C-S> <C-O>:write<CR>
-
-" undo / redo
-imap <C-Z> <C-O>:undo<CR>
-imap <C-Y> <C-O>:redo<CR>
 
 " shell
 imap <C-B> <C-O>:shell<CR>
@@ -119,19 +111,4 @@ imap <C-H> <C-O>:noh<CR>
 imap <F3> <C-O>/<CR>
 imap <S-F3> <C-O>?<CR>
 imap <C-R> <C-O>:%s/
-
-function! IsCursorAtEndOfLine()
-    return col('.') == col('$')
-endfunction
-
-let g:CursorWasAtEndOfLineI = 0
-autocmd CursorMovedI * let g:CursorWasAtEndOfLineI = IsCursorAtEndOfLine()
-
-function! PasteForHumans()
-    if g:CursorWasAtEndOfLineI == 1
-        normal! "+p
-    else
-        normal! "+Pl
-    endif
-endfunction
 
