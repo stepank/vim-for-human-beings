@@ -62,9 +62,7 @@ Other edit functions:
 
 ## Limitations (or bugs)
 
-First, _Ctrl + Home_, _Ctrl + End_, _Shift + Home_, and _Shift + End_ do not work in Gnome Terminal (which I use) out of the box. It seems to be impossible to fix this from vim side. It's Gnome Terminal (not GT itself, but VTE which GT is based on) that requires fixing. More about this in [my blog post](http://stepankk-dev.blogspot.ru/2014/02/fixing-ctrl-home-ctrl-end-shift-home.html).
-
-Another thing is if you select some text, copy it to clipboard, select another piece of text and then try to paste the first piece, it won't overwrite the selected one, it just won't do anything. I have no idea how to fix this. The workaround is to first hit _Del_, then paste.
+_Ctrl + Home_, _Ctrl + End_, _Shift + Home_, and _Shift + End_ do not work in Gnome Terminal (which I use) out of the box. It seems to be impossible to fix this from vim side. It's Gnome Terminal (not GT itself, but VTE which GT is based on) that requires fixing. More about this in [my blog post](http://stepankk-dev.blogspot.ru/2014/02/fixing-ctrl-home-ctrl-end-shift-home.html).
 
 ## Contacting me
 
