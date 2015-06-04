@@ -40,6 +40,7 @@ set tabstop=4
 
 " do not wrap long lines
 set nowrap
+set linebreak
 
 " show whitespace
 set listchars=tab:»\ ,trail:·
